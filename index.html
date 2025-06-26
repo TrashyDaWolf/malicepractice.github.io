@@ -18,8 +18,10 @@
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
+    .logo {
+      width: 200px;
+      max-width: 90%;
+      margin-bottom: 0.5em;
     }
 
     nav a {
@@ -73,7 +75,7 @@
 <body>
 
   <header>
-    <h1>Aura SMP</h1>
+    <img src="logo.jpg" alt="Aura SMP Logo" class="logo">
     <p>Your Next Minecraft Adventure Awaits</p>
     <nav>
       <a onclick="showPage('home')">Home</a>
@@ -93,13 +95,13 @@
 
     <div id="about" class="content">
       <h2>About Aura SMP</h2>
-      <img src="images/about.jpg" alt="About Image" class="section-img">
+      <img src="about.jpg" alt="About Image" class="section-img">
       <p>Aura SMP is a friendly multiplayer Minecraft server focused on lore, survival, and fun events.</p>
     </div>
 
     <div id="rules" class="content">
       <h2>Server Rules</h2>
-      <img src="images/rules.jpg" alt="Rules" class="section-img">
+      <img src="rules.jpg" alt="Rules" class="section-img">
       <ul>
         <li>No griefing or stealing</li>
         <li>Be respectful to other players</li>
@@ -110,14 +112,14 @@
 
     <div id="join" class="content">
       <h2>How to Join</h2>
-      <img src="images/join.jpg" alt="Join" class="section-img">
+      <img src="join.jpg" alt="Join" class="section-img">
       <p><strong>Java Edition:</strong> aura-smp.mcserver.net</p>
       <p><strong>Bedrock:</strong> Coming soon!</p>
     </div>
 
     <div id="discord" class="content">
       <h2>Join Our Discord</h2>
-      <img src="images/discord-icon.png" alt="Discord" class="section-img">
+      <img src="discord-icon.png" alt="Discord" class="section-img">
       <p>Chat with the community, receive updates, and get help.</p>
       <a class="btn" href="https://discord.gg/YOUR_INVITE" target="_blank">Join Discord</a>
     </div>
@@ -129,8 +131,7 @@
 
   <script>
     function showPage(pageId) {
-      const pages = document.querySelectorAll('.content');
-      pages.forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.content').forEach(p => p.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
     }
   </script>
