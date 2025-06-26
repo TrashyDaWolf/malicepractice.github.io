@@ -2,29 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aura SMP | Home</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Aura SMP | Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e0e;
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(135deg, #5a00e0, #00c6ff);
+      padding: 2em;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .content {
+      display: none;
+      padding: 2em;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h2 {
+      border-bottom: 2px solid #5a00e0;
+      padding-bottom: 0.3em;
+    }
+
+    .section-img, .banner {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 1.5em auto;
+      border-radius: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #5a00e0;
+      color: white;
+      padding: 0.7em 1.5em;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1em;
+    }
+
+    footer {
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1em;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h1>Aura SMP</h1>
     <p>Your Next Minecraft Adventure Awaits</p>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="rules.html">Rules</a>
-      <a href="join.html">Join</a>
-      <a href="discord.html">Discord</a>
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('about')">About</a>
+      <a onclick="showPage('rules')">Rules</a>
+      <a onclick="showPage('join')">Join</a>
+      <a onclick="showPage('discord')">Discord</a>
     </nav>
   </header>
 
   <main>
-    <h2>Welcome to Aura SMP!</h2>
-    <p>A fun, community-driven Minecraft survival experience. Explore, build, and make friends.</p>
+    <div id="home" class="content active">
+      <img src="images/banner.jpg" alt="Aura SMP Banner" class="banner">
+      <h2>Welcome to Aura SMP!</h2>
+      <p>A fun, community-driven Minecraft survival experience. Explore, build, and make friends.</p>
+    </div>
+
+    <div id="about" class="content">
+      <h2>About Aura SMP</h2>
+      <img src="images/about.jpg" alt="About Image" class="section-img">
+      <p>Aura SMP is a friendly multiplayer Minecraft server focused on lore, survival, and fun events.</p>
+    </div>
+
+    <div id="rules" class="content">
+      <h2>Server Rules</h2>
+      <img src="images/rules.jpg" alt="Rules" class="section-img">
+      <ul>
+        <li>No griefing or stealing</li>
+        <li>Be respectful to other players</li>
+        <li>No hacks, x-ray, or cheats</li>
+        <li>Follow staff instructions</li>
+      </ul>
+    </div>
+
+    <div id="join" class="content">
+      <h2>How to Join</h2>
+      <img src="images/join.jpg" alt="Join" class="section-img">
+      <p><strong>Java Edition:</strong> aura-smp.mcserver.net</p>
+      <p><strong>Bedrock:</strong> Coming soon!</p>
+    </div>
+
+    <div id="discord" class="content">
+      <h2>Join Our Discord</h2>
+      <img src="images/discord-icon.png" alt="Discord" class="section-img">
+      <p>Chat with the community, receive updates, and get help.</p>
+      <a class="btn" href="https://discord.gg/YOUR_INVITE" target="_blank">Join Discord</a>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Aura SMP</p>
   </footer>
+
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.content');
+      pages.forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
