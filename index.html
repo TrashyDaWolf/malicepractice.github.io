@@ -212,13 +212,9 @@
     }
   </script>
 
-<audio id="bgMusic" loop autoplay>
+<audio loop autoplay controls>
   <source src="song2.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
 </audio>
-
-<script>
-  const bgMusic = document.getElementById('bgMusic');
-  bgMusic.play().catch(e => console.log('Play prevented:', e));
-</script>
 </body>
 </html>
