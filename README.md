@@ -1,1 +1,0 @@
-# aura-smp.github.io
