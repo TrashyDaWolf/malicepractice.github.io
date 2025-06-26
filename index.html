@@ -114,18 +114,20 @@
   <header>
     <img src="logo.png" alt="Aura SMP Logo" class="logo">
     <p>Your Next Minecraft Adventure Awaits</p>
-    <nav>
-  <!-- Hamburger menu in top-left -->
+    <!-- Inside your <header> -->
+<nav style="position: relative; padding-left: 50px;">
+
+  <!-- Hamburger icon fixed top-left -->
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 
-  <!-- Normal navigation links visible always -->
+  <!-- Normal nav buttons -->
   <a onclick="showPage('home')">Home</a>
   <a onclick="showPage('about')">About</a>
   <a onclick="showPage('rules')">Rules</a>
   <a onclick="showPage('join')">Join</a>
   <a onclick="showPage('discord')">Discord</a>
-  
-  <!-- Dropdown menu (hidden by default) -->
+
+  <!-- Dropdown menu -->
   <div class="nav-dropdown" id="navMenu">
     <a onclick="showPage('home')">Home</a>
     <a onclick="showPage('about')">About</a>
