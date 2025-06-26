@@ -133,6 +133,50 @@
     }
   </style>
 </head>
+  /* Staff Section Styles */
+.staff-section {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.staff-section h2 {
+  color: #00c6ff;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.staff-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.staff-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 1.5em;
+  width: 200px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.staff-info h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.1em;
+}
+
+.staff-info p {
+  margin: 0.3em 0 0;
+  font-size: 0.9em;
+  color: #bbbbbb;
+}
 <body>
 
   <header>
@@ -154,31 +198,41 @@
   <p>A fun, community-driven Minecraft survival experience. Explore, build, and make friends in a world shaped by lore and community events.</p>
 
   <!-- Our Staff Section -->
-  <section class="staff-section">
-    <h2>Our Staff</h2>
-    <div class="staff-container">
-      <div class="staff-member">
-        <alt="Aidenix | Mydemons2354">
-        <p>@Aidenix <span>(Owner)</span></p>
-      </div>
-      <div class="staff-member">
-        <alt="ewoker17">
-        <p>@ewoker17 <span>(Co-owner & Assistant Developer)</span></p>
-      </div>
-      <div class="staff-member">
-        <alt="StyxPVP">
-        <p>@styxpvp <span>(Lead Developer & Owner)</span></p>
-      </div>
-      <div class="staff-member">
-        <alt="TWITCH_VROXY">
-        <p>@meisnotme0624 <span>(OWNER)</span></p>
-      </div>
-      <div class="staff-member">
-        <alt="OoogaBoooga">
-        <p>@rxxcket <span>(Manager)</span></p>
+<section class="staff-section">
+  <h2>Our Staff</h2>
+  <div class="staff-container">
+    <div class="staff-card">
+      <div class="staff-info">
+        <h3>@Aidenix</h3>
+        <p>(Owner)</p>
       </div>
     </div>
-  </section>
+    <div class="staff-card">
+      <div class="staff-info">
+        <h3>@ewoker17</h3>
+        <p>(Co-owner & Assistant Developer)</p>
+      </div>
+    </div>
+    <div class="staff-card">
+      <div class="staff-info">
+        <h3>@styxpvp</h3>
+        <p>(Lead Developer & Owner)</p>
+      </div>
+    </div>
+    <div class="staff-card">
+      <div class="staff-info">
+        <h3>@meisnotme0624</h3>
+        <p>(OWNER)</p>
+      </div>
+    </div>
+    <div class="staff-card">
+      <div class="staff-info">
+        <h3>@rxxcket</h3>
+        <p>(Manager)</p>
+      </div>
+    </div>
+  </div>
+</section>
 </div>
 
     <div id="about" class="content">
