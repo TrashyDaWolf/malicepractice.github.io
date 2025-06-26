@@ -212,10 +212,17 @@
     }
   </script>
 
-   <!-- Background Music -->
-    <audio loop autoplay>
-        <source src="song2.mp3" type="audio/mp3">
-    </audio>
-    <script src="script.js"></script>
+ <audio id="bgMusic" loop>
+  <source src="song2.mp3" type="audio/mp3">
+</audio>
+
+<script>
+  const bgMusic = document.getElementById('bgMusic');
+  document.body.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+    }
+  }, { once: true });
+</script>
 </body>
 </html>
