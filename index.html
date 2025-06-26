@@ -2,70 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aura SMP | Official Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura SMP | Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root {
-      --accent: #5a00e0;
-      --accent-light: #00c6ff;
-      --bg: #0e0e0e;
-      --text: #ffffff;
-      --muted: #bbbbbb;
-    }
-
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: #0e0e0e;
+      color: white;
     }
 
     header {
-      background: linear-gradient(135deg, var(--accent), var(--accent-light));
-      padding: 2.5em 1em 2em;
+      background: linear-gradient(135deg, #5a00e0, #00c6ff);
+      padding: 2em;
       text-align: center;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
     }
 
     .logo {
-      width: 500px;
+      width: 700px;
       max-width: 90%;
       margin-bottom: 0.5em;
-    }
-
-    header p {
-      font-size: 1.2em;
-      color: #f0f0f0;
-      margin-top: 0;
-    }
-
-    nav {
-      margin-top: 1em;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 1.2em;
-      font-weight: 600;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-      transition: border 0.3s;
-    }
-
-    nav a:hover {
-      border-bottom: 2px solid white;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2em 1em;
+      margin: 0 1em;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .content {
       display: none;
-      animation: fade 0.3s ease-in-out;
+      padding: 2em;
     }
 
     .active {
@@ -73,108 +42,71 @@
     }
 
     h2 {
-      font-size: 2em;
-      color: var(--accent-light);
-      margin-bottom: 0.5em;
-      border-left: 5px solid var(--accent);
-      padding-left: 0.5em;
-    }
-
-    p, ul {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-top: 0.5em;
-    }
-
-    ul {
-      padding-left: 1.2em;
+      border-bottom: 2px solid #5a00e0;
+      padding-bottom: 0.3em;
     }
 
     .btn {
       display: inline-block;
-      background: var(--accent);
+      background: #5a00e0;
       color: white;
-      padding: 0.8em 1.6em;
+      padding: 0.7em 1.5em;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
+      border-radius: 5px;
       margin-top: 1em;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: var(--accent-light);
     }
 
     footer {
       background-color: #111;
-      color: var(--muted);
+      color: #aaa;
       text-align: center;
-      padding: 1.5em 1em;
-      font-size: 0.9em;
-      margin-top: 3em;
+      padding: 1em;
     }
 
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 0.5em 0;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
     /* Staff Section Styles */
-.staff-section {
-  margin-top: 3em;
-  text-align: center;
-}
+    .staff-section {
+      margin-top: 3em;
+      text-align: center;
+    }
 
-.staff-section h2 {
-  color: #00c6ff;
-  font-size: 2em;
-  margin-bottom: 1em;
-}
+    .staff-section h2 {
+      color: #00c6ff;
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
 
-.staff-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5em;
-}
+    .staff-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
+    }
 
-.staff-card {
-  background-color: #1a1a1a;
-  border-radius: 12px;
-  padding: 1.5em;
-  width: 200px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-  transition: transform 0.2s, box-shadow 0.3s;
-}
+    .staff-card {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 1.5em;
+      width: 200px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
 
-.staff-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-}
+    .staff-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
 
-.staff-info h3 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 1.1em;
-}
+    .staff-info h3 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 1.1em;
+    }
 
-.staff-info p {
-  margin: 0.3em 0 0;
-  font-size: 0.9em;
-  color: #bbbbbb;
- }
-}
+    .staff-info p {
+      margin: 0.3em 0 0;
+      font-size: 0.9em;
+      color: #bbbbbb;
+    }
   </style>
 </head>
 <body>
@@ -188,106 +120,89 @@
       <a onclick="showPage('rules')">Rules</a>
       <a onclick="showPage('join')">Join</a>
       <a onclick="showPage('discord')">Discord</a>
-      <a onclick="showPage('store')">Store</a>
     </nav>
   </header>
 
   <main>
     <div id="home" class="content active">
-  <h2>Welcome to Aura SMP!</h2>
-  <p>A fun, community-driven Minecraft survival experience. Explore, build, and make friends in a world shaped by lore and community events.</p>
+      <h2>Welcome to Aura SMP!</h2>
+      <p>A fun, community-driven Minecraft survival experience. Explore, build, and make friends in a world shaped by lore and community events.</p>
 
-  <!-- Our Staff Section -->
-<section class="staff-section">
-  <h2>Our Staff</h2>
-  <div class="staff-container">
-    <div class="staff-card">
-      <div class="staff-info">
-        <h3>@Aidenix</h3>
-        <p>(Owner)</p>
-      </div>
+      <!-- Our Staff Section -->
+      <section class="staff-section">
+        <h2>Our Staff</h2>
+        <div class="staff-container">
+          <div class="staff-card">
+            <div class="staff-info">
+              <h3>@Aidenix</h3>
+              <p>(Owner)</p>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="staff-info">
+              <h3>@ewoker17</h3>
+              <p>(Co-owner & Assistant Developer)</p>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="staff-info">
+              <h3>@styxpvp</h3>
+              <p>(Lead Developer & Owner)</p>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="staff-info">
+              <h3>@meisnotme0624</h3>
+              <p>(OWNER)</p>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="staff-info">
+              <h3>@rxxcket</h3>
+              <p>(Manager)</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    <div class="staff-card">
-      <div class="staff-info">
-        <h3>@ewoker17</h3>
-        <p>(Co-owner & Assistant Developer)</p>
-      </div>
-    </div>
-    <div class="staff-card">
-      <div class="staff-info">
-        <h3>@styxpvp</h3>
-        <p>(Lead Developer & Owner)</p>
-      </div>
-    </div>
-    <div class="staff-card">
-      <div class="staff-info">
-        <h3>@meisnotme0624</h3>
-        <p>(OWNER)</p>
-      </div>
-    </div>
-    <div class="staff-card">
-      <div class="staff-info">
-        <h3>@rxxcket</h3>
-        <p>(Manager)</p>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
 
     <div id="about" class="content">
       <h2>About Aura SMP</h2>
-      <p>Aura SMP is a friendly multiplayer Minecraft server built around storytelling, survival, and player collaboration. Our world evolves through player actions, events, and custom mechanics — with an emphasis on creativity, community, and lore.</p>
+      <p>Aura SMP is a friendly multiplayer Minecraft server focused on lore, survival, and fun events.</p>
     </div>
 
     <div id="rules" class="content">
-      <h2>Server Rules</h2>
-      <ul>
-        <li>❌ No griefing or stealing</li>
-        <li>🤝 Be respectful to all players</li>
-        <li>🛑 No hacks, cheats, or x-ray</li>
-        <li>📜 Follow staff instructions at all times</li>
-      </ul>
-    </div>
+  <h2>Server Rules</h2>
+  <ul>
+    <li>❌ No griefing or stealing from other players.</li>
+    <li>🤝 Be respectful to everyone — no hate speech, racism, or harassment.</li>
+    <li>🛠️ No hacking, cheating, x-ray mods, or unfair advantages.</li>
+    <li>📜 Follow staff instructions at all times — they’re here to help.</li>
+    <li>🧱 Don’t build inappropriate structures or use offensive content.</li>
+    <li>💬 No spamming, advertising, or begging in chat.</li>
+    <li>🎮 Use common sense — if you think it might be wrong, don’t do it.</li>
+    <li>⚔️ PvP is allowed in specific zones — no spawn killing or unfair ambushes.</li>
+    <li>🌍 Respect builds and landmarks — keep the world clean.</li>
+    <li>🔄 No alt accounts or ban evasion — one player, one identity.</li>
+    <li>📝 Report bugs or exploits to staff — don’t abuse them.</li>
+  </ul>
+</div>
 
     <div id="join" class="content">
       <h2>How to Join</h2>
-      <p><strong>Java Edition IP:</strong> <code>aura-smp.mcserver.net</code></p>
-      <p><strong>Bedrock Edition:</strong> Coming soon!</p>
+      <p><strong>Java Edition:</strong> aura-smp.mcserver.net</p>
+      <p><strong>Bedrock:</strong> Coming soon!</p>
     </div>
 
     <div id="discord" class="content">
       <h2>Join Our Discord</h2>
-      <p>Stay connected with the Aura SMP community. Get updates, event announcements, and chat with fellow players in real-time.</p>
-      <a class="btn" href="https://discord.gg/CYvKJCKZUC" target="_blank">Join Our Discord</a>
+      <p>Chat with the community, receive updates, and get help.</p>
+      <a class="btn" href="https://discord.gg/CYvKJCKZUC" target="_blank">Join Discord</a>
     </div>
   </main>
 
-  <div id="store" class="content">
-  <h2>Support the Server</h2>
-  <p>Help keep Aura SMP running and unlock exclusive perks by purchasing ranks or crates.</p>
-
-  <div style="margin-top: 2em;">
-    <h3 style="color: #00c6ff;">🌟 VIP Rank - $5</h3>
-    <p>Get a colored name, VIP chat tag, and access to special areas.</p>
-    <a class="btn" href="https://your-store-link.com/vip" target="_blank">Buy VIP</a>
-  </div>
-
-  <div style="margin-top: 2em;">
-    <h3 style="color: #00c6ff;">🎁 Crate Bundle - $3</h3>
-    <p>Receive 5 in-game mystery crates filled with loot and rare items.</p>
-    <a class="btn" href="https://your-store-link.com/crates" target="_blank">Buy Crates</a>
-  </div>
-
-  <div style="margin-top: 2em;">
-    <h3 style="color: #00c6ff;">👑 MVP+ Rank - $10</h3>
-    <p>All VIP perks + particle trails, /hat, and /nick.</p>
-    <a class="btn" href="https://your-store-link.com/mvpplus" target="_blank">Buy MVP+</a>
-  </div>
-</div>
-
   <footer>
-    <p>&copy; 2025 Aura SMP. All rights reserved.</p>
+    <p>&copy; 2025 Aura SMP</p>
   </footer>
 
   <script>
