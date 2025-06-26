@@ -212,17 +212,13 @@
     }
   </script>
 
- <audio id="bgMusic" loop>
+<audio id="bgMusic" loop autoplay>
   <source src="song2.mp3" type="audio/mp3">
 </audio>
 
 <script>
   const bgMusic = document.getElementById('bgMusic');
-  document.body.addEventListener('click', () => {
-    if (bgMusic.paused) {
-      bgMusic.play();
-    }
-  }, { once: true });
+  bgMusic.play().catch(e => console.log('Play prevented:', e));
 </script>
 </body>
 </html>
