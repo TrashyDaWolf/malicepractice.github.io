@@ -2,39 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aura SMP | Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aura SMP | Official Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --accent: #5a00e0;
+      --accent-light: #00c6ff;
+      --bg: #0e0e0e;
+      --text: #ffffff;
+      --muted: #bbbbbb;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0e0e0e;
-      color: white;
+      background-color: var(--bg);
+      color: var(--text);
     }
 
     header {
-      background: linear-gradient(135deg, #5a00e0, #00c6ff);
-      padding: 2em;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      padding: 2.5em 1em 2em;
       text-align: center;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
     }
 
     .logo {
-      width: 700px;
+      width: 500px;
       max-width: 90%;
       margin-bottom: 0.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #f0f0f0;
+      margin-top: 0;
+    }
+
+    nav {
+      margin-top: 1em;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 1em;
-      font-weight: bold;
-      cursor: pointer;
+      margin: 0 1.2em;
+      font-weight: 600;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: border 0.3s;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid white;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2em 1em;
     }
 
     .content {
       display: none;
-      padding: 2em;
+      animation: fade 0.3s ease-in-out;
     }
 
     .active {
@@ -42,25 +73,63 @@
     }
 
     h2 {
-      border-bottom: 2px solid #5a00e0;
-      padding-bottom: 0.3em;
+      font-size: 2em;
+      color: var(--accent-light);
+      margin-bottom: 0.5em;
+      border-left: 5px solid var(--accent);
+      padding-left: 0.5em;
+    }
+
+    p, ul {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-top: 0.5em;
+    }
+
+    ul {
+      padding-left: 1.2em;
     }
 
     .btn {
       display: inline-block;
-      background: #5a00e0;
+      background: var(--accent);
       color: white;
-      padding: 0.7em 1.5em;
+      padding: 0.8em 1.6em;
       text-decoration: none;
-      border-radius: 5px;
+      font-weight: bold;
+      border-radius: 6px;
       margin-top: 1em;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--accent-light);
     }
 
     footer {
       background-color: #111;
-      color: #aaa;
+      color: var(--muted);
       text-align: center;
-      padding: 1em;
+      padding: 1.5em 1em;
+      font-size: 0.9em;
+      margin-top: 3em;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5em 0;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -81,39 +150,39 @@
   <main>
     <div id="home" class="content active">
       <h2>Welcome to Aura SMP!</h2>
-      <p>A fun, community-driven Minecraft survival experience. Explore, build, and make friends.</p>
+      <p>A fun, community-driven Minecraft survival experience. Explore, build, and make friends in a world shaped by lore and community events. Whether you're new or a veteran, Aura SMP is your next Minecraft home.</p>
     </div>
 
     <div id="about" class="content">
       <h2>About Aura SMP</h2>
-      <p>Aura SMP is a friendly multiplayer Minecraft server focused on lore, survival, and fun events.</p>
+      <p>Aura SMP is a friendly multiplayer Minecraft server built around storytelling, survival, and player collaboration. Our world evolves through player actions, events, and custom mechanics — with an emphasis on creativity, community, and lore.</p>
     </div>
 
     <div id="rules" class="content">
       <h2>Server Rules</h2>
       <ul>
-        <li>No griefing or stealing</li>
-        <li>Be respectful to other players</li>
-        <li>No hacks, x-ray, or cheats</li>
-        <li>Follow staff instructions</li>
+        <li>❌ No griefing or stealing</li>
+        <li>🤝 Be respectful to all players</li>
+        <li>🛑 No hacks, cheats, or x-ray</li>
+        <li>📜 Follow staff instructions at all times</li>
       </ul>
     </div>
 
     <div id="join" class="content">
       <h2>How to Join</h2>
-      <p><strong>Java Edition:</strong> aura-smp.mcserver.net</p>
-      <p><strong>Bedrock:</strong> Coming soon!</p>
+      <p><strong>Java Edition IP:</strong> <code>aura-smp.mcserver.net</code></p>
+      <p><strong>Bedrock Edition:</strong> Coming soon!</p>
     </div>
 
     <div id="discord" class="content">
       <h2>Join Our Discord</h2>
-      <p>Chat with the community, receive updates, and get help.</p>
-      <a class="btn" href="https://discord.gg/CYvKJCKZUC" target="_blank">Join Discord</a>
+      <p>Stay connected with the Aura SMP community. Get updates, event announcements, and chat with fellow players in real-time.</p>
+      <a class="btn" href="https://discord.gg/CYvKJCKZUC" target="_blank">Join Our Discord</a>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Aura SMP</p>
+    <p>&copy; 2025 Aura SMP. All rights reserved.</p>
   </footer>
 
   <script>
