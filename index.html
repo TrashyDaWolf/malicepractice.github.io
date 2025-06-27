@@ -1,220 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Aura SMP | Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura SMP</title>
+  <link rel="icon" type="image/webp" href="logo.webp" />
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0e0e0e;
+      background: linear-gradient(to bottom right, #0a0f2c, #1c1f4a);
       color: white;
+      scroll-behavior: smooth;
     }
-
     header {
-      background: linear-gradient(135deg, #5a00e0, #00c6ff);
-      padding: 2em;
-      text-align: center;
+      background: #111;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    .logo {
-      width: 700px;
-      max-width: 90%;
-      margin-bottom: 0.5em;
+    header img {
+      height: 60px;
     }
-
     nav a {
       color: white;
+      margin: 0 15px;
       text-decoration: none;
-      margin: 0 1em;
       font-weight: bold;
-      cursor: pointer;
     }
-
-    .content {
-      display: none;
-      padding: 2em;
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-
-    .active {
-      display: block;
+    h1, h2 {
+      color: #62a9ff;
+      margin-bottom: 20px;
     }
-
-    h2 {
-      border-bottom: 2px solid #5a00e0;
-      padding-bottom: 0.3em;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #5a00e0;
-      color: white;
-      padding: 0.7em 1.5em;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 1em;
-    }
-
     footer {
-      background-color: #111;
-      color: #aaa;
+      background: #080c20;
       text-align: center;
-      padding: 1em;
+      padding: 20px;
+      font-size: 14px;
     }
-
-    /* Staff Section Styles */
-    .staff-section {
-      margin-top: 3em;
-      text-align: center;
-    }
-
-    .staff-section h2 {
-      color: #00c6ff;
-      font-size: 2em;
-      margin-bottom: 1em;
-    }
-
-    .staff-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5em;
-    }
-
-    .staff-card {
-      background-color: #1a1a1a;
-      border-radius: 12px;
-      padding: 1.5em;
-      width: 200px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-      transition: transform 0.2s, box-shadow 0.3s;
-    }
-
-    .staff-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-    }
-
-    .staff-info h3 {
-      margin: 0;
-      color: #ffffff;
-      font-size: 1.1em;
-    }
-
-    .staff-info p {
-      margin: 0.3em 0 0;
-      font-size: 0.9em;
-      color: #bbbbbb;
+    .button {
+      display: inline-block;
+      background: #2f74ff;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="logo.png" alt="Aura SMP Logo" class="logo">
-    <p>Your Next Minecraft Adventure Awaits</p>
- <nav>
-  <a onclick="showPage('home')">Home</a>
-  <a onclick="showPage('about')">About</a>
-  <a onclick="showPage('rules')">Rules</a>
-  <a onclick="showPage('join')">Join</a>
-  <a onclick="showPage('discord')">Discord</a>
-</nav>
+    <img src="logo.webp" alt="Aura SMP Logo" />
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#rules">Rules</a>
+      <a href="#staff">Staff</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <div id="home" class="content active">
-      <h2>Welcome to Aura SMP!</h2>
-      <p>Welcome to a vibrant, community-driven Minecraft survival experience where your story truly matters. On Aura SMP, you’ll explore a rich world shaped by lore, player decisions, and custom events. Build your legacy, form alliances, join server-wide adventures, and connect with a welcoming community that thrives on creativity, cooperation, and unforgettable moments.</p>
+  <section id="home">
+    <h1>Welcome to Aura SMP</h1>
+    <p>A survival multiplayer server built for community and creativity.</p>
+    <a href="#about" class="button">Learn More</a>
+  </section>
 
-      <!-- Our Staff Section -->
-      <section class="staff-section">
-        <h2>Our Staff</h2>
-        <div class="staff-container">
-          <div class="staff-card">
-            <div class="staff-info">
-              <h3>@Aidenix</h3>
-              <p>(Owner)</p>
-            </div>
-          </div>
-          <div class="staff-card">
-            <div class="staff-info">
-              <h3>@ewoker17</h3>
-              <p>(Co-owner & Assistant Developer)</p>
-            </div>
-          </div>
-          <div class="staff-card">
-            <div class="staff-info">
-              <h3>@styxpvp</h3>
-              <p>(Lead Developer & Owner)</p>
-            </div>
-          </div>
-          <div class="staff-card">
-            <div class="staff-info">
-              <h3>@meisnotme0624</h3>
-              <p>(OWNER)</p>
-            </div>
-          </div>
-          <div class="staff-card">
-            <div class="staff-info">
-              <h3>@rxxcket</h3>
-              <p>(Manager)</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+  <section id="about">
+    <h2>About Aura SMP</h2>
+    <p>Aura SMP is a vanilla+ experience for players seeking a friendly and fair survival world. We offer custom plugins, grief protection, and an active Discord community. Come build, explore, and thrive!</p>
+  </section>
 
-    <div id="about" class="content">
-      <h2>About Aura SMP</h2>
-      <p>Aura SMP is a friendly multiplayer Minecraft server focused on lore, survival, and fun events.</p>
-    </div>
+  <section id="rules">
+    <h2>Rules</h2>
+    <ul>
+      <li>No griefing or stealing</li>
+      <li>Respect all players and staff</li>
+      <li>No cheating, x-ray, or exploits</li>
+      <li>Keep chat respectful and family-friendly</li>
+    </ul>
+  </section>
 
-    <div id="rules" class="content">
-  <h2>Server Rules</h2>
-  <ul>
-    <li>❌ No griefing or stealing from other players.</li>
-    <li>🤝 Be respectful to everyone — no hate speech, racism, or harassment.</li>
-    <li>🛠️ No hacking, cheating, x-ray mods, or unfair advantages.</li>
-    <li>📜 Follow staff instructions at all times — they’re here to help.</li>
-    <li>🧱 Don’t build inappropriate structures or use offensive content.</li>
-    <li>💬 No spamming, advertising, or begging in chat.</li>
-    <li>🎮 Use common sense — if you think it might be wrong, don’t do it.</li>
-    <li>⚔️ PvP is allowed in specific zones — no spawn killing or unfair ambushes.</li>
-    <li>🌍 Respect builds and landmarks — keep the world clean.</li>
-    <li>🔄 No alt accounts or ban evasion — one player, one identity.</li>
-    <li>📝 Report bugs or exploits to staff — don’t abuse them.</li>
-  </ul>
-</div>
+  <section id="staff">
+    <h2>Staff Team</h2>
+    <p>Meet the team keeping Aura SMP safe and fun:</p>
+    <ul>
+      <li><strong>Owner:</strong> Jerry</li>
+      <li><strong>Admins:</strong> Matthew, Kade</li>
+      <li><strong>Moderators:</strong> Alex, Storm</li>
+    </ul>
+  </section>
 
-    <div id="join" class="content">
-      <h2>How to Join</h2>
-      <p><strong>Java Edition:</strong> aura-smp.mcserver.net</p>
-      <p><strong>Bedrock:</strong> Coming soon!</p>
-    </div>
-
-    <div id="discord" class="content">
-      <h2>Join Our Discord</h2>
-      <p>Chat with the community, receive updates, and get help.</p>
-      <a class="btn" href="https://discord.gg/CYvKJCKZUC" target="_blank">Join Discord</a>
-    </div>
-  </main>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a question or issue? Reach out via our Discord server!</p>
+    <a class="button" href="https://discord.gg/YOUR-DISCORD-INVITE" target="_blank">Join Discord</a>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Aura SMP</p>
+    &copy; 2025 Aura SMP. Not affiliated with Mojang or Microsoft.
   </footer>
-  
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.content').forEach(p => p.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-    }
-  </script>
-
-<audio loop autoplay controls>
-  <source src="song2.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
-</audio>
 </body>
 </html>
