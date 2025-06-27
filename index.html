@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aura SMP</title>
-  <link rel="icon" type="image/webp" href="logo.webp" />
+  <link rel="icon" href="logo.webp" type="image/webp">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #0a0f2c, #1c1f4a);
+      background: #180040;
       color: white;
-      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
     header {
-      background: #111;
-      padding: 20px;
+      background: #7c1aff;
+      padding: 10px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
     }
     header img {
-      height: 60px;
+      height: 50px;
     }
     nav a {
-      color: white;
       margin: 0 15px;
+      color: white;
       text-decoration: none;
       font-weight: bold;
+    }
+    .hero {
+      background: url('hero-bg.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero img {
+      width: 400px;
+    }
+    .hero .play-now {
+      margin-top: 20px;
+      background: #000;
+      padding: 15px 30px;
+      border-radius: 10px;
+      display: inline-block;
+      font-size: 18px;
+      color: white;
+    }
+    .hero .discord-btn {
+      background: #5865f2;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      margin-top: 15px;
+      display: inline-block;
     }
     section {
       padding: 80px 20px;
@@ -38,73 +67,69 @@
       margin: auto;
     }
     h1, h2 {
-      color: #62a9ff;
+      color: #7c9aff;
       margin-bottom: 20px;
     }
     footer {
-      background: #080c20;
+      background: #12002b;
       text-align: center;
       padding: 20px;
       font-size: 14px;
-    }
-    .button {
-      display: inline-block;
-      background: #2f74ff;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      margin-top: 20px;
-      text-decoration: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.webp" alt="Aura SMP Logo" />
+    <img src="logo.webp" alt="Aura SMP Logo">
     <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
+      <a href="#home">Games</a>
+      <a href="#news">News</a>
+      <a href="#staff">Staff Team</a>
       <a href="#rules">Rules</a>
-      <a href="#staff">Staff</a>
-      <a href="#contact">Contact</a>
+      <a href="#premium">Premium</a>
+      <a href="#careers">Careers</a>
+      <a href="#store">Store</a>
     </nav>
   </header>
 
-  <section id="home">
-    <h1>Welcome to Aura SMP</h1>
-    <p>A survival multiplayer server built for community and creativity.</p>
-    <a href="#about" class="button">Learn More</a>
+  <section class="hero" id="home">
+    <img src="logo.webp" alt="Aura SMP">
+    <div class="play-now">PLAY NOW<br><small>Copy IP</small></div>
+    <div class="discord-btn">Join Discord</div>
   </section>
 
-  <section id="about">
-    <h2>About Aura SMP</h2>
-    <p>Aura SMP is a vanilla+ experience for players seeking a friendly and fair survival world. We offer custom plugins, grief protection, and an active Discord community. Come build, explore, and thrive!</p>
+  <section id="news">
+    <h2>Latest News</h2>
+    <p>Welcome to the brand-new Aura SMP website! Stay tuned for updates and announcements.</p>
+  </section>
+
+  <section id="staff">
+    <h2>Staff Team</h2>
+    <p>Owner: Jerry<br>Admins: Matthew, Kade<br>Moderators: Alex, Storm</p>
   </section>
 
   <section id="rules">
     <h2>Rules</h2>
     <ul>
-      <li>No griefing or stealing</li>
-      <li>Respect all players and staff</li>
-      <li>No cheating, x-ray, or exploits</li>
-      <li>Keep chat respectful and family-friendly</li>
+      <li>Respect everyone</li>
+      <li>No cheating or exploits</li>
+      <li>No griefing</li>
     </ul>
   </section>
 
-  <section id="staff">
-    <h2>Staff Team</h2>
-    <p>Meet the team keeping Aura SMP safe and fun:</p>
-    <ul>
-      <li><strong>Owner:</strong> Jerry</li>
-      <li><strong>Admins:</strong> Matthew, Kade</li>
-      <li><strong>Moderators:</strong> Alex, Storm</li>
-    </ul>
+  <section id="premium">
+    <h2>Premium Ranks</h2>
+    <p>Support the server with awesome cosmetics and perks. Coming soon to our store.</p>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have a question or issue? Reach out via our Discord server!</p>
-    <a class="button" href="https://discord.gg/YOUR-DISCORD-INVITE" target="_blank">Join Discord</a>
+  <section id="careers">
+    <h2>Careers</h2>
+    <p>Join the Aura SMP team! Positions open for moderators, builders, and content creators.</p>
+  </section>
+
+  <section id="store">
+    <h2>Store</h2>
+    <p>Visit our in-game or online store to support Aura SMP and get exclusive content.</p>
   </section>
 
   <footer>
