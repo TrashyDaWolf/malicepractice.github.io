@@ -19,7 +19,13 @@
     }
     header img { height:50px; }
     nav { margin-left:auto; }
-    nav a { margin:0 12px; color:white; font-weight:bold; text-decoration:none; }
+    nav a {
+      margin:0 12px;
+      color:white;
+      font-weight:bold;
+      text-decoration:none;
+      cursor:pointer;
+    }
     .hero {
       background:url('hero-bg.jpg') center/cover no-repeat;
       height:100vh;
@@ -58,17 +64,15 @@
       right:8%;
       background:#5865f2;
     }
-    .discord-badge {
-      position:absolute;
-      top:6px;
-      right:6%;
-      background:#7289da;
-      border-radius:12px;
-      padding:2px 8px;
-      font-size:12px;
-      font-weight:bold;
+    section {
+      display:none;
+      padding:80px 20px;
+      max-width:1000px;
+      margin:auto;
     }
-    section { padding:80px 20px; max-width:1000px; margin:auto; }
+    section.active {
+      display:block !important;
+    }
     h1,h2 { color:#7c9aff; margin-bottom:20px; }
     ul { padding-left:20px; }
     footer {
@@ -84,6 +88,29 @@
         alert("Server IP copied: play.aurasmp.net");
       });
     }
+
+    window.onload = () => {
+      const links = document.querySelectorAll("nav a");
+      const sections = document.querySelectorAll("section");
+
+      function showSection(id) {
+        sections.forEach(s => s.classList.remove("active"));
+        const target = document.querySelector(id);
+        if (target) target.classList.add("active");
+      }
+
+      links.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const id = link.getAttribute("href");
+          showSection(id);
+        });
+      });
+
+      // Only show section if hash matches, else show default
+      const initial = window.location.hash || "#news";
+      showSection(initial);
+    };
   </script>
 </head>
 <body>
@@ -107,8 +134,7 @@
     <a class="hero-button discord-btn" href="https://discord.gg/CYvKJCKZUC" target="_blank">
       💬 JOIN DISCORD
     </a>
-    <!-- Discord member count widget -->
-    <iframe src="https://discord.com/api/guilds/YOUR_SERVER_ID/widget.json?style=banner1"
+    <iframe src="https://discord.com/api/guilds/1382109104071508141/widget.json?style=banner1"
             width="220" height="60" allowtransparency="true"
             style="position:absolute; top:30px; right:8%; border:none; background:transparent;"></iframe>
   </section>
