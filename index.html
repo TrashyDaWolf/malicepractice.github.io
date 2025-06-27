@@ -6,79 +6,88 @@
   <title>Aura SMP</title>
   <link rel="icon" href="logo.webp" type="image/webp">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #180040;
-      color: white;
-      overflow-x: hidden;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Segoe UI', sans-serif; background:#180040; color:white; overflow-x:hidden; }
     header {
-      background: #7c1aff;
-      padding: 10px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      background:#7c1aff;
+      padding:10px 30px;
+      display:flex;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:999;
     }
-    header img {
-      height: 50px;
-    }
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    header img { height:50px; }
+    nav { margin-left:auto; }
+    nav a { margin:0 12px; color:white; font-weight:bold; text-decoration:none; }
     .hero {
-      background: url('hero-bg.jpg') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
+      background:url('hero-bg.jpg') center/cover no-repeat;
+      height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
-    .hero img {
-      width: 400px;
+    .logo-centered {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      max-width:400px;
+      width:90%;
+      z-index:1;
     }
-    .hero .play-now {
-      margin-top: 20px;
-      background: #000;
-      padding: 15px 30px;
-      border-radius: 10px;
-      display: inline-block;
-      font-size: 18px;
-      color: white;
+    .hero-button {
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      padding:14px 28px;
+      border-radius:8px;
+      font-size:16px;
+      font-weight:bold;
+      color:white;
+      background:#000;
+      text-decoration:none;
+      transition:background .3s;
+      display:flex;
+      align-items:center;
     }
-    .hero .discord-btn {
-      background: #5865f2;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 10px;
-      margin-top: 15px;
-      display: inline-block;
+    .hero-button:hover { background:#222; }
+    .copy-ip { left:8%; }
+    .discord-btn {
+      right:8%;
+      background:#5865f2;
     }
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
+    .discord-badge {
+      position:absolute;
+      top:6px;
+      right:6%;
+      background:#7289da;
+      border-radius:12px;
+      padding:2px 8px;
+      font-size:12px;
+      font-weight:bold;
     }
-    h1, h2 {
-      color: #7c9aff;
-      margin-bottom: 20px;
-    }
+    section { padding:80px 20px; max-width:1000px; margin:auto; }
+    h1,h2 { color:#7c9aff; margin-bottom:20px; }
+    ul { padding-left:20px; }
     footer {
-      background: #12002b;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      background:#12002b;
+      text-align:center;
+      padding:20px;
+      font-size:14px;
     }
   </style>
+  <script>
+    function copyIP(){
+      navigator.clipboard.writeText("play.aurasmp.net").then(() => {
+        alert("Server IP copied: play.aurasmp.net");
+      });
+    }
+  </script>
 </head>
 <body>
+
   <header>
     <img src="logo.webp" alt="Aura SMP Logo">
     <nav>
@@ -93,9 +102,15 @@
   </header>
 
   <section class="hero" id="home">
-    <img src="logo.webp" alt="Aura SMP">
-    <div class="play-now">PLAY NOW<br><small>Copy IP</small></div>
-    <div class="discord-btn">Join Discord</div>
+    <a class="hero-button copy-ip" onclick="copyIP()">▶ PLAY NOW</a>
+    <img src="logo.webp" alt="Aura SMP Logo" class="logo-centered">
+    <a class="hero-button discord-btn" href="https://discord.gg/CYvKJCKZUC" target="_blank">
+      💬 JOIN DISCORD
+    </a>
+    <!-- Discord member count widget -->
+    <iframe src="https://discord.com/api/guilds/YOUR_SERVER_ID/widget.json?style=banner1"
+            width="220" height="60" allowtransparency="true"
+            style="position:absolute; top:30px; right:8%; border:none; background:transparent;"></iframe>
   </section>
 
   <section id="news">
@@ -135,5 +150,6 @@
   <footer>
     &copy; 2025 Aura SMP. Not affiliated with Mojang or Microsoft.
   </footer>
+
 </body>
 </html>
