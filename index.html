@@ -22,7 +22,7 @@
 
     .card {
       position: absolute;
-      top: 30px;
+      top: 20px;
       padding: 10px 20px;
       background: #1e1e2f;
       border-radius: 12px;
@@ -30,6 +30,8 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
 
     .card img {
@@ -53,11 +55,11 @@
     }
 
     .discord-card {
-      right: 40px;
+      right: 20px;
     }
 
     .youtube-card {
-      left: 40px;
+      left: 20px;
     }
 
     img.logo {
@@ -79,19 +81,33 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
     }
+
+    @media (max-width: 600px) {
+      .discord-card,
+      .youtube-card {
+        position: static;
+        margin: 10px 0;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .card {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="card discord-card" style="position:absolute; top:30px; right:40px;">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord">
-    <span>Void Studios</span>
-    <a href="https://discord.gg/Upz7PVUSPK" target="_blank">Join</a>
-  </div>
-
-  <div class="card youtube-card" style="position:absolute; top:30px; left:40px;">
+  <div class="card youtube-card">
     <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
     <span>Void Studios</span>
     <a href="https://www.youtube.com/@VoidStudios-o3s" target="_blank">Subscribe</a>
+  </div>
+
+  <div class="card discord-card">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord">
+    <span>Void Studios</span>
+    <a href="https://discord.gg/Upz7PVUSPK" target="_blank">Join</a>
   </div>
 
   <img src="logo.png" alt="Logo" class="logo" />
