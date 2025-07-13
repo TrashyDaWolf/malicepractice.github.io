@@ -17,99 +17,30 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      position: relative;
-    }
-
-    .card {
-      position: absolute;
-      top: 20px;
-      padding: 10px 20px;
-      background: #1e1e2f;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.6);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: nowrap;
-      white-space: nowrap;
-    }
-
-    .card img {
-      width: 30px;
-      height: 30px;
-    }
-
-    .card a {
-      background: #5865F2;
-      color: white;
-      padding: 6px 12px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: background 0.3s;
-    }
-
-    .card a:hover {
-      background: #4752c4;
-    }
-
-    .discord-card {
-      right: 20px;
-    }
-
-    .youtube-card {
-      left: 20px;
     }
 
     img.logo {
-      max-width: 300px;
+      width: 400px;
       height: auto;
-      margin-bottom: 30px;
-      filter: drop-shadow(0 0 20px #8a2be2) drop-shadow(0 0 40px #4b0082);
-      animation: float 3s ease-in-out infinite;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 0 12px #8a2be2) drop-shadow(0 0 24px #6a0dad) drop-shadow(0 0 40px #4b0082);
+      animation: float 4s ease-in-out infinite;
     }
 
     h1 {
-      font-size: 36px;
-      font-weight: normal;
-      text-shadow: 0 0 12px #00bfff, 0 0 24px #1e90ff;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00bfff, 0 0 20px #1e90ff, 0 0 30px #1e90ff;
     }
 
     @keyframes float {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      50% { transform: translateY(-25px); }
       100% { transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      .discord-card,
-      .youtube-card {
-        position: static;
-        margin: 10px 0;
-        flex-direction: row;
-        justify-content: center;
-      }
-      .card {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="card youtube-card">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
-    <span>Void Studios</span>
-    <a href="https://www.youtube.com/@VoidStudios-o3s" target="_blank">Subscribe</a>
-  </div>
-
-  <div class="card discord-card">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord">
-    <span>Void Studios</span>
-    <a href="https://discord.gg/Upz7PVUSPK" target="_blank">Join</a>
-  </div>
-
   <img src="logo.png" alt="Logo" class="logo" />
   <h1>This content is coming soon!</h1>
 </body>
