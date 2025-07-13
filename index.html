@@ -78,6 +78,12 @@
       width: 280px;
       text-align: center;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .social-card:active {
+      transform: scale(0.95);
     }
 
     .social-card img {
@@ -131,13 +137,25 @@
       text-decoration: none;
       font-weight: bold;
     }
-
-    .discord-widget {
-      margin-bottom: 10px;
-    }
   </style>
 </head>
 <body>
+  <audio id="bgMusic" autoplay></audio>
+  <script>
+    const songs = ["song1.mp3", "song2.mp3"];
+    let current = 0;
+
+    const audio = document.getElementById("bgMusic");
+    audio.src = songs[current];
+    audio.play();
+
+    audio.addEventListener("ended", () => {
+      current = (current + 1) % songs.length;
+      audio.src = songs[current];
+      audio.play();
+    });
+  </script>
+
   <img src="logo.png" alt="Logo" class="logo" />
   <h1>This content is coming soon!</h1>
 
@@ -148,9 +166,6 @@
 
   <div class="social-container">
     <div class="social-card discord">
-      <div class="discord-widget">
-        <iframe src="https://discord.com/widget?id=1388401438689984605&theme=dark" width="280" height="100" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-      </div>
       <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/discord.svg" alt="Discord Logo">
       <h2>Join Void Studios on Discord</h2>
       <a href="https://discord.gg/Upz7PVUSPK" target="_blank">Join Server</a>
