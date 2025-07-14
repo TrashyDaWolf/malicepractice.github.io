@@ -6,130 +6,86 @@
   <title>Luzora Network</title>
   <link rel="icon" href="logo1.png" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* General Reset */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #0f0f0f;
-      color: white;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #121212;
+      color: #ddd;
       overflow-x: hidden;
     }
 
+    /* Header & Banner */
     header {
-      background: #333;
-      color: #fff;
       text-align: center;
-      padding: 30px 0;
+      padding: 50px;
+      background: linear-gradient(90deg, #3a3a3a, #222222);
+      color: white;
     }
 
     header h1 {
-      font-size: 3em;
+      font-size: 3.5em;
+      text-shadow: 2px 2px 10px rgba(0, 255, 255, 0.5);
     }
 
-    /* Banner Section */
     .banner {
-      background: url('banner.jpg') no-repeat center center fixed;
+      background: url('logo1.png') no-repeat center center fixed;
       background-size: cover;
       padding: 100px 0;
       text-align: center;
       color: white;
+      position: relative;
     }
 
     .banner h2 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      font-size: 3em;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
 
     .banner p {
-      font-size: 1.2em;
+      font-size: 1.5em;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
 
     /* Navigation */
     nav {
-      background: #222;
-      padding: 15px 0;
+      background-color: #222;
+      padding: 10px 0;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
     }
 
     nav ul {
       list-style-type: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+      display: flex;
+      justify-content: center;
     }
 
     nav ul li {
-      display: inline;
-      margin-right: 20px;
+      margin: 0 20px;
     }
 
     nav ul li a {
-      color: white;
+      color: #f1f1f1;
       text-decoration: none;
-      font-size: 1.1em;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
     }
 
     nav ul li a:hover {
-      color: #ff9c00;
+      background-color: #ff9c00;
+      color: black;
     }
 
-    /* Sections */
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    /* Staff Cards */
-    .staff-team {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 40px;
-    }
-
-    .staff-card {
-      background: #444;
-      border-radius: 10px;
-      padding: 20px;
-      width: 200px;
-      text-align: center;
-    }
-
-    .staff-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-
-    .staff-card h3 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-
-    .staff-card p {
-      font-size: 1.1em;
-      margin: 0;
-    }
-
-    /* Music Player */
-    audio {
-      display: none;
-    }
-
-    /* Footer */
-    footer {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
-
-    /* Dropdown Menu */
+    /* Dropdown Button */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -141,6 +97,8 @@
       background-color: #333;
       min-width: 160px;
       z-index: 1;
+      border-radius: 8px;
+      top: 100%;
     }
 
     .dropdown-content a {
@@ -148,14 +106,77 @@
       padding: 12px 16px;
       text-decoration: none;
       display: block;
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     .dropdown-content a:hover {
       background-color: #ff9c00;
     }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
+    /* Staff Cards */
+    .staff-team {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 20px;
+    }
+
+    .staff-card {
+      background: #222;
+      border-radius: 15px;
+      width: 220px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .staff-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .staff-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #ff9c00;
+    }
+
+    .staff-card h3 {
+      font-size: 1.6em;
+      color: #ff9c00;
+      margin-bottom: 5px;
+    }
+
+    .staff-card p {
+      font-size: 1.1em;
+      color: #ddd;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #ff9c00;
+      text-decoration: none;
+    }
+
+    /* Music Player */
+    audio {
+      display: none;
     }
   </style>
 </head>
@@ -169,7 +190,7 @@
   <!-- Banner Section -->
   <div class="banner">
     <h2>Welcome to Luzora Network</h2>
-    <p>The future of Minecraft minigames, coming soon with epic features like Spleef, LaserTag, and more!</p>
+    <p>The future of Minecraft minigames is almost here. Join us for epic games like Spleef and LaserTag!</p>
   </div>
 
   <!-- Navigation -->
@@ -179,7 +200,7 @@
       <li><a href="#downloads">Downloads</a></li>
       <li><a href="#apply">Apply</a></li>
       <li class="dropdown">
-        <a href="#">Discord</a>
+        <a href="#">More</a>
         <div class="dropdown-content">
           <a href="https://discord.gg/jwh9e6yAz8" target="_blank">Join Discord</a>
           <a href="#report-bug">Report a Bug</a>
@@ -191,10 +212,10 @@
     </ul>
   </nav>
 
-  <!-- Home Section -->
+  <!-- About Section -->
   <section id="home">
     <h2>About Luzora Network</h2>
-    <p>Luzora Network is the next step in Minecraft minigames. With fast-paced, futuristic game modes, we offer a unique and exciting experience for players of all levels. Prepare yourself for action-packed games like Spleef and LaserTag!</p>
+    <p>Welcome to **Luzora Network**, the ultimate futuristic Minecraft minigame experience! We're launching with Spleef and LaserTag, and we have tons more in the works. Join us for action-packed gameplay in a modern, high-tech world.</p>
   </section>
 
   <!-- Staff Team Section -->
@@ -231,7 +252,7 @@
 
   <!-- Background Music -->
   <audio id="background-music" loop>
-    <source src="song2 (1).mp3" type="audio/mp3" />
+    <source src="song (1).mp3" type="audio/mp3" />
   </audio>
 
   <script>
