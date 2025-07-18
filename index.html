@@ -3,103 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crowned PvP Realm</title>
-  <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+  <title>Your Demon Links</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Rubik+Mono+One&display=swap');
+
     body {
-      margin: 0;
-      font-family: 'Goldman', sans-serif;
-      background: linear-gradient(to bottom, #1b1f3b, #0f0f0f);
-      color: gold;
+      margin:0; padding:0;
+      background: #0d0d0d url('https://i.imgur.com/4HJbzEq.gif') center/cover no-repeat;
+      font-family: 'Rubik Mono One', sans-serif;
+      color: #eee;
       text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-
-    header {
-      background: linear-gradient(90deg, #ffd700, #1e90ff);
-      color: #000;
-      padding: 30px 0;
-      font-size: 2.5em;
-      text-shadow: 2px 2px #333;
-    }
-
-    section {
-      margin: 40px auto;
-      width: 90%;
-      max-width: 900px;
-      background: rgba(255, 215, 0, 0.05);
-      border: 2px solid gold;
+    .card {
+      background: rgba(20,0,0,0.8);
+      border: 2px solid #550000;
       border-radius: 15px;
       padding: 30px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px #900;
     }
-
-    h2 {
-      color: #1e90ff;
+    .card img {
+      width: 120px; height:120px;
+      border-radius: 50%;
+      border: 4px solid #c00;
+      box-shadow: 0 0 15px #f00;
     }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      font-size: 1.2em;
+    h1 {
+      font-family: 'UnifrakturCook', cursive;
+      font-size: 2.5em;
+      margin: 10px 0 5px;
+      color: #c33;
+      text-shadow: 0 0 5px #900;
     }
-
-    li::before {
-      content: "⚔️ ";
+    p {
+      font-size: 1em;
+      margin: 5px 0 20px;
+      color: #aaa;
     }
-
-    .button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 1.1em;
-      background: gold;
-      color: #1b1f3b;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .links a {
       text-decoration: none;
-      display: inline-block;
+      background: #330000;
+      color: #f55;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      position: relative;
+      box-shadow: 0 0 10px #900;
+      transition: 0.3s;
     }
-
-    .button:hover {
-      background: #1e90ff;
-      color: white;
+    .links a:hover {
+      background: #550000;
+      color: #fff;
+      box-shadow: 0 0 15px #ff0000;
     }
-
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #999;
+    .links a::before {
+      content: '💀 ';
     }
   </style>
 </head>
 <body>
+  <div class="card">
+    <!-- Discord profile via Lanyard -->
+    <img id="avatar" src="https://i.imgur.com/AfFp7pu.png" alt="Avatar" />
+    <h1 id="username">YourName#1234</h1>
+    <p id="status">Loading status...</p>
 
-  <header>
-    👑 Crowned PvP 👑
-  </header>
+    <div class="links">
+      <a href="https://youtube.com/yourchannel" target="_blank">YouTube</a>
+      <a href="https://discord.gg/yourinvite" target="_blank">Discord Server</a>
+      <a href="minecraft://?addRealm=YourRealmLinkHere">Join My Realm</a>
+      <!-- Add more links as needed -->
+    </div>
+  </div>
 
-  <section>
-    <h2>Welcome to Crowned PvP!</h2>
-    <p>Crowned PvP is going to (hopefully) be a successful Minecraft Bedrock Realm. The realm is currently under development and will be updated frequently. If you join, we’d love your suggestions! 😄</p>
-
-    <h2>⚡ Features</h2>
-    <ul>
-      <li>Elytra Free PvP</li>
-      <li>Multi Sell</li>
-      <li>16+ Kits</li>
-      <li>Custom Server GUI</li>
-      <li>Custom Armor</li>
-      <li>And more!!!</li>
-      <li>Realm Button Doesn't Work RN</li>
-    </ul>
-      
-    <a href="https://discord.gg/Vrcpzm57Kt" class="button">💬 Suggest a Feature</a>
-    <a href="minecraft://?addRealm=CrownedPvP" class="button">🎮 Join Realm</a>
-  </section>
-
-  <footer>
-    &copy; 2025 Crowned PvP. All Rights Reserved.
-  </footer>
-
+  <script>
+    const userId = 'YOUR_DISCORD_USER_ID'; // <-- Paste your Discord ID here
+    fetch(`https://api.lanyard.rest/v1/users/${userId}`)
+      .then(res => res.json())
+      .then(data => {
+        const d = data.data;
+        document.getElementById('avatar').src = d.discord_user.avatar 
+          ? `https://cdn.discordapp.com/avatars/${d.discord_user.id}/${d.discord_user.avatar}.png?size=512`
+          : document.getElementById('avatar').src;
+        document.getElementById('username').textContent =
+          d.discord_user.username + '#' + d.discord_user.discriminator;
+        document.getElementById('status').textContent =
+          d.discord_status === 'online'
+            ? '🟢 Online' + (d.activities.find(a => a.type === 1) ? ' (Voice)' : '')
+            : d.discord_status === 'idle'
+            ? '🌙 Idle'
+            : d.discord_status === 'dnd'
+            ? '⛔ Do Not Disturb'
+            : '⚫ Offline';
+      })
+      .catch(() => {
+        document.getElementById('status').textContent = '⚠️ Could not load status';
+      });
+  </script>
 </body>
 </html>
