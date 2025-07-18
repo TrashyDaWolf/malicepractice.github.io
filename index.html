@@ -87,28 +87,50 @@
   </div>
 
   <script>
-    const userId = 'https://discord.com/users/1386911289359732776'; // <-- Paste your Discord ID here
-    fetch(`https://api.lanyard.rest/v1/users/${userId}`)
-      .then(res => res.json())
-      .then(data => {
-        const d = data.data;
-        document.getElementById('avatar').src = d.discord_user.avatar 
-          ? `https://cdn.discordapp.com/avatars/${d.discord_user.id}/${d.discord_user.avatar}.png?size=512`
-          : document.getElementById('avatar').src;
-        document.getElementById('username').textContent =
-          d.discord_user.username + '#' + d.discord_user.discriminator;
-        document.getElementById('status').textContent =
-          d.discord_status === 'online'
-            ? '🟢 Online' + (d.activities.find(a => a.type === 1) ? ' (Voice)' : '')
-            : d.discord_status === 'idle'
-            ? '🌙 Idle'
-            : d.discord_status === 'dnd'
-            ? '⛔ Do Not Disturb'
-            : '⚫ Offline';
-      })
-      .catch(() => {
-        document.getElementById('status').textContent = '⚠️ Could not load status';
-      });
+    const userId = '1386911289359732776';
+
+fetch(`https://api.lanyard.rest/v1/users/${userId}`)
+  .then(response => {
+    if (!response.ok) throw new Error('Network response was not ok');
+    return response.json();
+  })
+  .then(data => {
+    if (!data.success) throw new Error('API returned unsuccessful response');
+    
+    const d = data.data;
+    
+    const avatarElem = document.getElementById('avatar');
+    const usernameElem = document.getElementById('username');
+    const statusElem = document.getElementById('status');
+
+    if(d.discord_user.avatar) {
+      avatarElem.src = `https://cdn.discordapp.com/avatars/${d.discord_user.id}/${d.discord_user.avatar}.png?size=512`;
+    }
+
+    usernameElem.textContent = `${d.discord_user.username}#${d.discord_user.discriminator}`;
+
+    const statusMap = {
+      online: '🟢 Online',
+      idle: '🌙 Idle',
+      dnd: '⛔ Do Not Disturb',
+      offline: '⚫ Offline',
+      invisible: '⚫ Invisible/Offline'
+    };
+
+    let statusText = statusMap[d.discord_status] || '⚫ Offline';
+
+    // Check if user is in voice channel (activity type 1)
+    if(d.activities && d.activities.find(a => a.type === 1)) {
+      statusText += ' (Voice)';
+    }
+
+    statusElem.textContent = statusText;
+
+  })
+  .catch(err => {
+    console.error('Error fetching Lanyard API:', err);
+    document.getElementById('status').textContent = '⚠️ Could not load status';
+  });
   </script>
 </body>
 </html>
