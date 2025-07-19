@@ -154,6 +154,18 @@
     }
     showNextQuote();
     setInterval(showNextQuote, 4000);
+
+    // ▶️ Play music on any click
+    let audioStarted = false;
+    const audio = new Audio("music.mp3"); // 🔁 Replace this with your actual music file path or URL
+    audio.loop = true;
+
+    document.body.addEventListener("click", () => {
+      if (!audioStarted) {
+        audio.play().catch(e => console.error("Audio failed to play:", e));
+        audioStarted = true;
+      }
+    });
   </script>
 </body>
 </html>
