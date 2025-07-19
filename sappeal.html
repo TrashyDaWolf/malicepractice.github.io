@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ban Appeal - Malice Practice</title>
+  <style>
+    body { background-color: #1e1e1e; font-family: Arial, sans-serif; color: #f0f0f0; text-align: center; padding: 50px 20px; }
+    h1 { color: #ff4c4c; margin-bottom: 30px; }
+    form { display: inline-block; text-align: left; background: #2c2c2c; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, textarea { width: 300px; padding: 10px; background-color: #1e1e1e; color: #f0f0f0; border: 1px solid #444; border-radius: 6px; }
+    button { margin-top: 20px; width: 100%; padding: 12px; background-color: #8b0000; border: none; color: white; font-size: 18px; border-radius: 8px; cursor: pointer; }
+    button:hover { background-color: #b22222; }
+    footer { margin-top: 60px; color: #888; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Suspension Appeal</h1>
 
+  <form id="appealForm">
+    <label for="name">IGN</label>
+    <input type="text" id="name" required />
+
+    <label for="discord">Discord (optional)</label>
+    <input type="text" id="discord" />
+
+    <label for="reason">Reason for Suspension</label>
+    <input type="text" id="reason" required />
+
+    <label for="message">Appeal Message</label>
+    <textarea id="message" rows="4" required></textarea>
+
+    <button type="submit">Submit Appeal</button>
+  </form>
+
+  <footer>&copy; 2025 Malice Practice</footer>
+
+  <script>
+    const webhookURL = "https://discord.com/api/webhooks/1396000603435696139/BMOH4iIVNegk-KAfhKp25_PKI3LvqNd_ffmDYdpDpYxuAlgBiGIkTIzfQtMgy3PWtzHK";
+
+    document.getElementById("appealForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = {
+        username: "Ban Appeal Form",
+        embeds: [{
+          title: "New Ban Appeal Submitted",
+          color: 0x8b0000,
+          fields: [
+            { name: "IGN", value: document.getElementById("name").value },
+            { name: "Discord", value: document.getElementById("discord").value || "Not provided" },
+            { name: "Reason for Suspension", value: document.getElementById("reason").value },
+            { name: "Appeal Message", value: document.getElementById("message").value }
+          ],
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        alert("Appeal submitted successfully!");
+        document.getElementById("appealForm").reset();
+      })
+      .catch(error => {
+        alert("Error submitting appeal.");
+        console.error(error);
+      });
+    });
+  </script>
+</body>
+</html>
