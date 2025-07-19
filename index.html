@@ -2,135 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Personal Links</title>
+  <title>Malice Practice Website</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Rubik+Mono+One&display=swap');
-
     body {
-      margin:0; padding:0;
-      background: #0d0d0d url('https://i.imgur.com/4HJbzEq.gif') center/cover no-repeat;
-      font-family: 'Rubik Mono One', sans-serif;
-      color: #eee;
-      text-align: center;
-      height: 100vh;
+      margin: 0;
+      background: #1e1e1e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f0f0f0;
+    }
+    header {
+      background: #2c2c2c;
+      padding: 20px 50px;
+      border-bottom: 3px solid #8b0000;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    .card {
-      background: rgba(20,0,0,0.8);
-      border: 2px solid #550000;
-      border-radius: 15px;
-      padding: 30px;
-      max-width: 400px;
-      margin: 0 auto;
-      box-shadow: 0 0 20px #900;
+    .logo {
+      width: 120px;
     }
-    .card img {
-      width: 120px; height:120px;
-      border-radius: 50%;
-      border: 4px solid #c00;
-      box-shadow: 0 0 15px #f00;
-    }
-    h1 {
-      font-family: 'UnifrakturCook', cursive;
-      font-size: 2.5em;
-      margin: 10px 0 5px;
-      color: #c33;
-      text-shadow: 0 0 5px #900;
-    }
-    p {
-      font-size: 1em;
-      margin: 5px 0 20px;
-      color: #aaa;
-    }
-    .links {
+    nav {
       display: flex;
-      flex-direction: column;
       gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    .links a {
-      text-decoration: none;
-      background: #330000;
-      color: #f55;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 1.1em;
+    .dropdown {
       position: relative;
-      box-shadow: 0 0 10px #900;
+    }
+    .dropbtn {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #8b0000;
+      padding: 10px 16px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 10px;
       transition: 0.3s;
     }
-    .links a:hover {
-      background: #550000;
-      color: #fff;
-      box-shadow: 0 0 15px #ff0000;
+    .dropbtn:hover {
+      background: #8b0000;
     }
-    .links a::before {
-      content: '💀 ';
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2c2c2c;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      z-index: 1;
+      border: 1px solid #8b0000;
+      border-radius: 10px;
+    }
+    .dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #444;
+    }
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+    .dropdown-content a:hover {
+      background-color: #8b0000;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    main {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.6rem;
+      color: #ff4c4c;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .quote-box {
+      font-style: italic;
+      margin-top: 40px;
+      color: #ccc;
+      font-size: 1.1rem;
+      height: 40px;
+      transition: opacity 0.5s ease;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: #1c1c1c;
+      border-top: 2px solid #8b0000;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <!-- Discord profile via Lanyard -->
-    <img id="avatar" src="https://i.imgur.com/AfFp7pu.png" alt="Avatar" />
-    <h1 id="username">developer8621</h1>
-    <p id="status">Loading status...</p>
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn">Appeals</button>
+        <div class="dropdown-content">
+          <a href="bappeal.html">Ban</a>
+          <a href="sappeal.html">Suspension</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Tiers</button>
+        <div class="dropdown-content">
+          <a href="stiers.html">Tiers</a>
+          <a href="subtiers.html">Sub tiers</a>
+        </div>
+      </div>
+      <a class="dropbtn" href="https://discord.gg/PzxeWYZkz6" target="_blank">Discord</a>
+      <a class="dropbtn" href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <div class="links">
-      <a href="https://youtube.com/@Mydemons2354" target="_blank">YouTube</a>
-      <a href="https://discord.gg/Vrcpzm57Kt" target="_blank">Discord Server</a>
-      <a href="https://www.xbox.com/en-US/play/user/Mydemons2354?gamertag=Mydemons2354">Xbox</a>
-      <!-- Add more links as needed -->
-    </div>
-  </div>
+  <main>
+    <h1>Welcome to Malice Practice</h1>
+    <p>The ultimate arena for mastering PvP in Minecraft Bedrock. Queue up, train hard, and dominate the competition. Join the community and rise through the ranks.</p>
+    <div class="quote-box" id="quoteBox">Loading quote...</div>
+  </main>
+
+  <footer>
+    &copy; 2025 Malice Practice. All rights reserved.
+  </footer>
 
   <script>
-    const userId = '1386911289359732776';
-
-fetch(`https://api.lanyard.rest/v1/users/${userId}`)
-  .then(response => {
-    if (!response.ok) throw new Error('Network response was not ok');
-    return response.json();
-  })
-  .then(data => {
-    if (!data.success) throw new Error('API returned unsuccessful response');
-    
-    const d = data.data;
-    
-    const avatarElem = document.getElementById('avatar');
-    const usernameElem = document.getElementById('username');
-    const statusElem = document.getElementById('status');
-
-    if(d.discord_user.avatar) {
-      avatarElem.src = `https://cdn.discordapp.com/avatars/${d.discord_user.id}/${d.discord_user.avatar}.png?size=512`;
+    const quotes = [
+      '"Just hold w and click" - Alex13217',
+      '"We actually have to partner with you" - MrPotato',
+      '"Kid your macroing.." - Kingcash',
+      '"Ive always wanted a MCBE Vanilla testing server" - Liam The Pro',
+      '"Wait what the fuck" - Cornballape'
+    ];
+    let currentQuote = 0;
+    const quoteBox = document.getElementById("quoteBox");
+    function showNextQuote() {
+      quoteBox.style.opacity = 0;
+      setTimeout(() => {
+        quoteBox.textContent = quotes[currentQuote];
+        quoteBox.style.opacity = 1;
+        currentQuote = (currentQuote + 1) % quotes.length;
+      }, 300);
     }
-
-    usernameElem.textContent = `${d.discord_user.username}#${d.discord_user.discriminator}`;
-
-    const statusMap = {
-      online: '🟢 Online',
-      idle: '🌙 Idle',
-      dnd: '⛔ Do Not Disturb',
-      offline: '⚫ Offline',
-      invisible: '⚫ Invisible/Offline'
-    };
-
-    let statusText = statusMap[d.discord_status] || '⚫ Offline';
-
-    // Check if user is in voice channel (activity type 1)
-    if(d.activities && d.activities.find(a => a.type === 1)) {
-      statusText += ' (Voice)';
-    }
-
-    statusElem.textContent = statusText;
-
-  })
-  .catch(err => {
-    console.error('Error fetching Lanyard API:', err);
-    document.getElementById('status').textContent = '⚠️ Could not load status';
-  });
+    showNextQuote();
+    setInterval(showNextQuote, 4000);
   </script>
 </body>
 </html>
