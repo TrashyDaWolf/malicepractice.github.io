@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ban Appeal - Malice Practice</title>
+  <title>Suspension Appeal - Malice Practice</title>
   <style>
     body { background-color: #1e1e1e; font-family: Arial, sans-serif; color: #f0f0f0; text-align: center; padding: 50px 20px; }
     h1 { color: #ff4c4c; margin-bottom: 30px; }
@@ -42,9 +42,9 @@
       e.preventDefault();
 
       const data = {
-        username: "Ban Appeal Form",
+        username: "Suspension Appeal Form",
         embeds: [{
-          title: "New Ban Appeal Submitted",
+          title: "New Suspension Appeal Submitted",
           color: 0x8b0000,
           fields: [
             { name: "IGN", value: document.getElementById("name").value },
@@ -62,11 +62,11 @@
         body: JSON.stringify(data)
       })
       .then(response => {
-        alert("Appeal submitted successfully!");
+        alert("Your suspension appeal was submitted successfully.");
         document.getElementById("appealForm").reset();
       })
       .catch(error => {
-        alert("Error submitting appeal.");
+        alert("Error submitting your appeal. Please try again later.");
         console.error(error);
       });
     });
