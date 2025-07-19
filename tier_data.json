@@ -1,0 +1,20 @@
+{
+  "PlayerOne": {
+    "kills": 120,
+    "deaths": 30,
+    "kd": 4.0,
+    "points": 1500
+  },
+  "PlayerTwo": {
+    "kills": 100,
+    "deaths": 25,
+    "kd": 4.0,
+    "points": 1400
+   },
+  "PlayerThree": {
+    "kills": 100,
+    "deaths": 25,
+    "kd": 4.0,
+    "points": 0
+  }
+}
