@@ -1,116 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Axiora Entertainment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(145deg, #0f0f1a, #1a1a2e);
-      color: #f1f1f1;
-      text-align: center;
-      padding: 60px 20px;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at center, #0a001f 0%, #060013 100%);
+      color: #ffffff;
+      overflow-x: hidden;
     }
+
     header {
-      margin-bottom: 40px;
+      background: url('https://i.imgur.com/xORiGGA.png') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
     }
-    h1 {
+
+    header h1 {
       font-size: 3em;
-      color: #ffffff;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 15px #9e6eff;
     }
-    p.tagline {
+
+    header p {
       font-size: 1.2em;
-      color: #bbbbbb;
       margin-top: 10px;
+      color: #d5caff;
     }
+
     nav {
-      margin: 40px 0;
+      background-color: rgba(10, 0, 30, 0.95);
+      padding: 15px 0;
+      text-align: center;
+      border-top: 1px solid #9e6eff20;
+      border-bottom: 1px solid #9e6eff20;
     }
+
     nav a {
-      display: inline-block;
-      margin: 0 15px;
-      padding: 12px 25px;
+      color: #fff;
       text-decoration: none;
-      color: #ffffff;
-      background: #292943;
-      border-radius: 8px;
-      transition: 0.3s ease;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
-      background: #3a3a6a;
+      color: #b478ff;
     }
-    .content {
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2em;
+      color: #9e6eff;
+      margin-bottom: 15px;
+    }
+
+    section p {
+      font-size: 1em;
       max-width: 800px;
       margin: 0 auto;
+      color: #d1cfe8;
     }
-    section {
+
+    .metrics {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
       margin: 60px 0;
     }
-    footer {
-      margin-top: 80px;
-      font-size: 0.9em;
-      color: #777;
+
+    .metric {
+      flex: 1 1 200px;
+      font-size: 1.5em;
+      color: #fff;
     }
-    .btn {
+
+    .metric span {
+      display: block;
+      font-size: 2.5em;
+      color: #b478ff;
+    }
+
+    .projects-btn {
+      margin-top: 30px;
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #3a3a6a;
-      color: #ffffff;
-      border-radius: 8px;
+      padding: 12px 30px;
+      background: #9e6eff;
+      color: #fff;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
-      transition: background 0.3s ease;
+      transition: 0.3s ease;
     }
-    .btn:hover {
-      background-color: #505090;
+
+    .projects-btn:hover {
+      background: #c6a5ff;
+    }
+
+    footer {
+      background: #0a001f;
+      text-align: center;
+      padding: 30px 10px;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    .mascot {
+      width: 180px;
+      margin: 40px auto 0;
+      display: block;
+      filter: drop-shadow(0 0 15px #9e6eff88);
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Axiora Entertainment</h1>
-    <p class="tagline">Shaping Experiences Beyond the Horizon</p>
+    <h1>AXIORA ENTERTAINMENT</h1>
+    <p>Crafting Worlds Like No Other</p>
   </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="#team">Team</a>
+    <a href="#metrics">Stats</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="content">
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Axiora Entertainment is a forward-thinking media and gaming network, crafting immersive digital experiences for the next generation of players and creators.</p>
-    </section>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Axiora is a creative tech studio pushing the boundaries of gaming, virtual worlds, and digital storytelling. With nearly a decade of experience, we build immersive projects that inspire and connect.</p>
+  </section>
 
-    <section id="projects">
-      <h2>Our Projects</h2>
-      <p>From Minecraft networks to interactive media platforms, Axiora is building worlds powered by community and innovation.</p>
-      <a href="projects.html" class="btn">View Projects</a>
-    </section>
+  <section id="metrics">
+    <div class="metrics">
+      <div class="metric">
+        <span>51,786</span>
+        Unique Players
+      </div>
+      <div class="metric">
+        <span>9.6</span>
+        Years Experience
+      </div>
+      <div class="metric">
+        <span>4.9/5.0</span>
+        500+ Reviews
+      </div>
+    </div>
+  </section>
 
-    <section id="team">
-      <h2>Meet the Team</h2>
-      <p>A team of developers, designers, and storytellers with one vision: pushing creative boundaries with purpose.</p>
-    </section>
+  <section id="projects">
+    <h2>Our Projects</h2>
+    <p>Join us as we redefine the gaming landscape and shape the future of interactive entertainment.</p>
+    <a href="projects.html" class="projects-btn">SEE PROJECTS →</a>
+    <img class="mascot" src="https://i.imgur.com/F3rdbF9.png" alt="Robot Mascot" />
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Get in touch via <a href="mailto:contact@axiora.net" style="color: #69a1ff;">contact@axiora.net</a> or reach us on Discord.</p>
-    </section>
-  </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Reach out via <a href="mailto:contact@axiora.net" style="color: #b478ff;">contact@axiora.net</a> or connect with us on Discord to start building your next project.</p>
+  </section>
 
   <footer>
     © 2025 Axiora Entertainment. All rights reserved.
   </footer>
+
 </body>
 </html>
