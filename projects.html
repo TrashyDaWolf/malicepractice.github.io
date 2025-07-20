@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Projects - Axiora Entertainment</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(145deg, #0f0f1a, #1a1a2e);
+      color: #f1f1f1;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .project-card {
+      background-color: #22223b;
+      border-radius: 12px;
+      padding: 30px 20px;
+      width: 300px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+    .project-card:hover {
+      background-color: #2e2e50;
+      transform: scale(1.03);
+    }
+    .project-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .project-desc {
+      font-size: 0.95em;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+    .project-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3a3a6a;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .project-link:hover {
+      background-color: #505090;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #777;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 40px;
+      color: #69a1ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Our Projects</h1>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <div class="project-title">Nexo Studios</div>
+      <div class="project-desc">A cutting-edge gaming and content studio pushing boundaries in Minecraft and beyond.</div>
+      <a class="project-link" href="nexo.html">Visit Page</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Malice Practice</div>
+      <div class="project-desc">Axiora's flagship Minecraft PvP practice server — sleek, fast, and competitive.</div>
+      <a class="project-link" href="malice.html">Visit Page</a>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <footer>
+    © 2025 Axiora Entertainment. All rights reserved.
+  </footer>
+
+</body>
+</html>
