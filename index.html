@@ -2,150 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Nexo Studios Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexo Studios</title>
   <style>
     body {
       margin: 0;
-      background: linear-gradient(135deg, #7F00FF, #E100FF);
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #E100FF;
-    }
-
-    .logo {
-      width: 120px;
-    }
-
-    nav {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .dropbtn {
-      background: transparent;
-      color: #fff;
-      border: 2px solid #E100FF;
-      padding: 10px 16px;
-      font-size: 15px;
-      cursor: pointer;
-      border-radius: 10px;
-      transition: background 0.3s ease;
-      text-decoration: none;
-    }
-
-    .dropbtn:hover {
-      background: #E100FF;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #2c2c2c;
-      min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-      z-index: 1;
-      border: 1px solid #E100FF;
-      border-radius: 10px;
-    }
-
-    .dropdown-content a {
-      color: #fff;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      border-bottom: 1px solid #444;
-    }
-
-    .dropdown-content a:last-child {
-      border-bottom: none;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #E100FF;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to bottom right, #7F00FF, #E100FF);
+      color: white;
       text-align: center;
-      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    img.logo {
+      width: 220px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px #000);
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #ffffff;
+      font-size: 2em;
+      font-weight: 700;
+      text-shadow: 0 0 5px #000;
+      margin-bottom: 10px;
     }
 
     p {
-      font-size: 1.2rem;
       max-width: 600px;
-      line-height: 1.6;
+      font-size: 1em;
+      margin-bottom: 40px;
+      text-shadow: 0 0 4px #000;
     }
 
-    footer {
-      text-align: center;
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: none;
       padding: 20px;
-      font-size: 14px;
-      background-color: rgba(0, 0, 0, 0.3);
-      border-top: 2px solid #E100FF;
+      border-radius: 12px;
+      width: 280px;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
+    }
+
+    .btn b {
+      display: block;
+      font-size: 1.2em;
+      margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo1.png" alt="Logo" class="logo">
-    <nav>
-      <a class="dropbtn" href="malice.html">Malice Practice</a>
-      <div class="dropdown">
-        <button class="dropbtn">Appeals</button>
-        <div class="dropdown-content">
-          <a href="bappeal.html">Ban</a>
-          <a href="sappeal.html">Suspension</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Tiers</button>
-        <div class="dropdown-content">
-          <a href="stiers.html">Tiers</a>
-          <a href="subtiers.html">Sub tiers</a>
-        </div>
-      </div>
-      <a class="dropbtn" href="https://discord.gg/tPUWNvE9J7" target="_blank">Discord</a>
-      <a class="dropbtn" href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <img src="logo.png" alt="Nexo Studios Logo" class="logo" />
+  <h1>Helping out everyone and still #1</h1>
+  <p>Nexo Studios is a great team contributing to the MCBE Community — building custom addons, realms, and making multiplayer better for all!</p>
 
-  <main>
-    <h1>Welcome to Nexo Studios</h1>
-    <p> Nexo Studios is a place where all the fun minigames happens like laser tag, spleef, murder mystery, etc </p>
-  </main>
-
-  <footer>
-    &copy; 2025 Nexo Studios. All rights reserved.
-  </footer>
+  <div class="button-grid">
+    <a href="dev.html" class="btn">
+      <b>Nexo Dev</b>
+      Keep up with developer logs, updates, and more!
+    </a>
+    <a href="connect.html" class="btn">
+      <b>Nexo Connect</b>
+      Connect to custom servers right from your console.
+    </a>
+    <a href="games.html" class="btn">
+      <b>Nexo Games</b>
+      Explore the best minigames built with our custom addons.
+    </a>
+    <a href="malice.html" class="btn">
+      <b>Malice Practice</b>
+      A top-tier PvP & survival realm with everything you love.
+    </a>
+    <a href="discord.html" class="btn">
+      <b>Discord</b>
+      Join our Discord and be a part of the community!
+    </a>
+  </div>
 </body>
 </html>
