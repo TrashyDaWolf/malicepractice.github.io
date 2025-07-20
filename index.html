@@ -20,7 +20,7 @@
     }
 
     header {
-      background: url('https://i.imgur.com/xORiGGA.png') no-repeat center center/cover;
+      background: linear-gradient(to bottom, #090018, #1d0030);
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -125,10 +125,14 @@
     }
 
     .mascot {
-      width: 180px;
       margin: 40px auto 0;
-      display: block;
-      filter: drop-shadow(0 0 15px #9e6eff88);
+      font-size: 1.2em;
+      background: #1d0030;
+      padding: 40px;
+      border-radius: 20px;
+      width: 200px;
+      color: #c6a5ff;
+      box-shadow: 0 0 20px #9e6eff66;
     }
   </style>
 </head>
@@ -154,7 +158,7 @@
   <section id="metrics">
     <div class="metrics">
       <div class="metric">
-        <span>51,786</span>
+        <span id="playerCount">0</span>
         Unique Players
       </div>
       <div class="metric">
@@ -172,7 +176,7 @@
     <h2>Our Projects</h2>
     <p>Join us as we redefine the gaming landscape and shape the future of interactive entertainment.</p>
     <a href="projects.html" class="projects-btn">SEE PROJECTS →</a>
-    <img class="mascot" src="https://i.imgur.com/F3rdbF9.png" alt="Robot Mascot" />
+    <div class="mascot">[ Insert Mascot Graphic Here ]</div>
   </section>
 
   <section id="contact">
@@ -183,6 +187,27 @@
   <footer>
     © 2025 Axiora Entertainment. All rights reserved.
   </footer>
+
+  <script>
+    const countEl = document.getElementById('playerCount');
+    let current = 0;
+    const target = 51786;
+    const speed = 50; // Smaller = faster
+
+    function animateCount() {
+      const increment = Math.ceil(target / 200); // smooth speed
+      if (current < target) {
+        current += increment;
+        if (current > target) current = target;
+        countEl.textContent = current.toLocaleString();
+        requestAnimationFrame(animateCount);
+      }
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(animateCount, 300);
+    });
+  </script>
 
 </body>
 </html>
