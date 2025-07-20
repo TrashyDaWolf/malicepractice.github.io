@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nexo Studios Website</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #7F00FF, #E100FF);
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E100FF;
+    }
+
+    .logo {
+      width: 120px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .dropbtn {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #E100FF;
+      padding: 10px 16px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+
+    .dropbtn:hover {
+      background: #E100FF;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2c2c2c;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      z-index: 1;
+      border: 1px solid #E100FF;
+      border-radius: 10px;
+    }
+
+    .dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #E100FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-top: 2px solid #E100FF;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo1.png" alt="Logo" class="logo">
+    <nav>
+      <a class="dropbtn" href="malice.html">Malice Practice</a>
+      <div class="dropdown">
+        <button class="dropbtn">Appeals</button>
+        <div class="dropdown-content">
+          <a href="bappeal.html">Ban</a>
+          <a href="sappeal.html">Suspension</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Tiers</button>
+        <div class="dropdown-content">
+          <a href="stiers.html">Tiers</a>
+          <a href="subtiers.html">Sub tiers</a>
+        </div>
+      </div>
+      <a class="dropbtn" href="https://discord.gg/tPUWNvE9J7" target="_blank">Discord</a>
+      <a class="dropbtn" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to Nexo Studios</h1>
+    <p> Nexo Studios is a place where all the fun minigames happens like laser tag, spleef, murder mystery, etc </p>
+  </main>
+
+  <footer>
+    &copy; 2025 Nexo Studios. All rights reserved.
+  </footer>
+</body>
+</html>
