@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f0f0f0;
+    }
+
+    header {
+      background: rgba(0,0,0,0.75);
+      padding: 20px 50px;
+      border-bottom: 3px solid #8b0000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      backdrop-filter: blur(6px);
+    }
+
+    .logo {
+      width: 120px;
+      border-radius: 12px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .dropbtn {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #8b0000;
+      padding: 10px 16px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .dropbtn:hover {
+      background: #8b0000;
+    }
+
+    main {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      color: #ff4c4c;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.75);
+      border: 1px solid #8b0000;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 900px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+    }
+
+    .card h2 {
+      color: #ffcc70;
+      margin-bottom: 15px;
+    }
+
+    .card img {
+      width: 200px;
+      border-radius: 12px;
+      margin: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .social-links a:hover {
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
+      transform: translateY(-3px);
+    }
+
+    .quote-box {
+      font-style: italic;
+      margin-top: 20px;
+      color: #ccc;
+      font-size: 1.1rem;
+      height: 40px;
+      transition: opacity 0.5s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: rgba(0,0,0,0.85);
+      border-top: 2px solid #8b0000;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <nav>
+      <a class="dropbtn" href="https://discord.gg/YOUR_DISCORD" target="_blank">Discord</a>
+      <a class="dropbtn" href="https://youtube.com/YOUR_CHANNEL" target="_blank">YouTube</a>
+      <a class="dropbtn" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to My Portfolio</h1>
+
+    <div class="card">
+      <h2>About Me</h2>
+      <p>Write a short bio about yourself, your skills, and what you do here.</p>
+    </div>
+
+    <div class="card">
+      <h2>Projects</h2>
+      <img src="project1.jpg" alt="Project 1">
+      <img src="project2.jpg" alt="Project 2">
+      <img src="project3.jpg" alt="Project 3">
+    </div>
+
+    <div class="card">
+      <h2>Connect With Me</h2>
+      <div class="social-links">
+        <a href="https://discord.gg/YOUR_DISCORD" target="_blank">Discord</a>
+        <a href="https://youtube.com/YOUR_CHANNEL" target="_blank">YouTube</a>
+      </div>
+    </div>
+
+    <div class="quote-box" id="quoteBox">Loading quote...</div>
+  </main>
+
+  <footer id="contact">
+    &copy; 2025 My Portfolio. All rights reserved.
+  </footer>
+
+  <script>
+    const quotes = [
+      '"Keep grinding, success takes time."',
+      '"Creativity is intelligence having fun."',
+      '"Every project is a step forward."',
+      '"Build. Break. Learn. Repeat."',
+      '"Passion fuels progress."'
+    ];
+    let currentQuote = 0;
+    const quoteBox = document.getElementById("quoteBox");
+    function showNextQuote() {
+      quoteBox.style.opacity = 0;
+      setTimeout(() => {
+        quoteBox.textContent = quotes[currentQuote];
+        quoteBox.style.opacity = 1;
+        currentQuote = (currentQuote + 1) % quotes.length;
+      }, 300);
+    }
+    showNextQuote();
+    setInterval(showNextQuote, 4000);
+
+    // ▶️ Play music on click
+    let audioStarted = false;
+    const audio = new Audio("music.mp3"); // replace with your music file
+    audio.loop = true;
+
+    document.body.addEventListener("click", () => {
+      if (!audioStarted) {
+        audio.play().catch(e => console.error("Audio failed:", e));
+        audioStarted = true;
+      }
+    });
+  </script>
+</body>
+</html>
