@@ -126,7 +126,7 @@
 
   <main>
     <h1>Welcome to Malice Practice</h1>
-    <p>Your favorite PvP practice space for community, Minecraft, and more. Train, fight, and rise to the top.</p>
+    <p>A dedicated space for PvP practice, community, and fun. Push your limits, learn new strats, and dominate the competition.</p>
     <div class="quote-box" id="quoteBox">Loading quote...</div>
   </main>
 
@@ -135,12 +135,21 @@
   </footer>
 
   <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <script>
+<audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<script>
+  // Force autoplay by starting muted and then unmuting
+  const audio = document.getElementById("bgMusic");
+  audio.volume = 0.5; // set volume (0.0–1.0)
+  audio.muted = true;
+  audio.play().then(() => {
+    audio.muted = false;
+  }).catch(() => {
+    console.log("Autoplay blocked. User interaction needed.");
+  });
+</script>
     const quotes = [
       '"Just hold w and click" - Alex13217',
       '"We actually have to partner with you" - MrPotato',
@@ -163,3 +172,4 @@
   </script>
 </body>
 </html>
+
