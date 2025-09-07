@@ -135,21 +135,11 @@
   </footer>
 
   <!-- Background Music -->
-<audio id="bgMusic" autoplay loop>
-  <source src="music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-<script>
-  // Force autoplay by starting muted and then unmuting
-  const audio = document.getElementById("bgMusic");
-  audio.volume = 0.5; // set volume (0.0–1.0)
-  audio.muted = true;
-  audio.play().then(() => {
-    audio.muted = false;
-  }).catch(() => {
-    console.log("Autoplay blocked. User interaction needed.");
-  });
-</script>
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
     const quotes = [
       '"Just hold w and click" - Alex13217',
       '"We actually have to partner with you" - MrPotato',
@@ -169,7 +159,16 @@
     }
     showNextQuote();
     setInterval(showNextQuote, 4000);
+
+    // Play music when user clicks/taps anywhere
+    const audio = document.getElementById("bgMusic");
+    function enableMusic() {
+      audio.play().catch(err => console.log("Play blocked:", err));
+      document.removeEventListener("click", enableMusic);
+      document.removeEventListener("touchstart", enableMusic);
+    }
+    document.addEventListener("click", enableMusic);
+    document.addEventListener("touchstart", enableMusic);
   </script>
 </body>
 </html>
-
